@@ -72,7 +72,7 @@ int main()
 {
     int count=0;
     int openFormat = 0;
-    double *areaValues = nullptr;
+    int *areaValues = nullptr;
     Figure** figures = nullptr;
 
     std::cout << "Load data from previous session (1 - yes, 2 - no):";
@@ -118,7 +118,7 @@ int main()
             count = cnt;
             if (cnt > 0)
             {
-                areaValues = new double[cnt];
+                areaValues = new int[cnt];
                 figures = new Figure*[cnt];
 
                 for (int i = 0; i < cnt; i++)
@@ -134,7 +134,7 @@ int main()
         std::cin >> count;
         std::cout << "################################" << std::endl;
 
-        areaValues = new double[count];
+        areaValues = new int[count];
         figures = new Figure*[count];
 
         try {
@@ -160,8 +160,8 @@ int main()
     std::cout << "Print all figures" << std::endl;
     std::cout << "################################" << std::endl;
 
-    double sumX = 0;
-    double sumY = 0;
+    int sumX = 0;
+    int sumY = 0;
 
     for (int i = 0; i < count; i++)
     {
@@ -175,7 +175,7 @@ int main()
     }
 
     std::cout << "################################" << std::endl;
-    std::cout << "All figures mean area = " << getArithmeticMean<double>(areaValues, count) << std::endl;
+    std::cout << "All figures mean area = " << getArithmeticMean<int>(areaValues, count) << std::endl;
     std::cout << "################################" << std::endl;
     std::cout << "All figures center mean (x, y) = (" << sumX / count << ", " << sumY / count << ")" << std::endl;
     std::cout << "################################" << std::endl;

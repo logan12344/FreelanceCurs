@@ -1,7 +1,7 @@
 
 #include "Rectangle.h"
 
-Rectangle::Rectangle(double inX, double inY ):a(inX),b(inY)
+Rectangle::Rectangle(int inX, int inY ):a(inX),b(inY)
 {
     if(a<0)
     {

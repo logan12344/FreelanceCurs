@@ -7,11 +7,11 @@
 class Triangle:
 public Figure
 {
-    double a,b,c;
+	int a,b,c;
 
 public:
-    Triangle(double s1=0,double s2=0,double s3=0);
-    double area(void)const;
+    Triangle(int s1=0, int s2=0, int s3=0);
+	double area(void)const;
     std::string print() const;
     std::string printToFile() const;
     std::istream& read(std::istream&);
