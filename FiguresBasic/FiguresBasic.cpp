@@ -7,6 +7,7 @@
 #include "Triangle.h"
 #include "Rectangle.h"
 #include "Ellipse.h"
+#include <iomanip>
 
 using namespace std;
 
@@ -170,19 +171,15 @@ int main()
         sumY += figures[i]->getCenter().y();
 
         cout << *figures[i] << endl;
-        cout << "Area :  " << areaValues[i] << endl;
-        std::cout << "================================" << std::endl;
+		cout << "\n_______________________________________________________________";
+		cout << "\n|   Area |All figures mean area|All figures center mean (x, y)|";
+		cout << "\n|________|_____________________|______________________________|";
+		cout << "\n|" << setw(8) <<  areaValues[i] << "|" << setw(21) << getArithmeticMean<double>(areaValues, count) << "|" << setw(27) << sumX / count << ", " << sumY / count << "|";
+		cout << "\n|________|_____________________|______________________________|";
     }
 
-    std::cout << "################################" << std::endl;
-    std::cout << "All figures mean area = " << getArithmeticMean<double>(areaValues, count) << std::endl;
-    std::cout << "################################" << std::endl;
-    std::cout << "All figures center mean (x, y) = (" << sumX / count << ", " << sumY / count << ")" << std::endl;
-    std::cout << "################################" << std::endl;
-    std::cout << std::endl;
-
     int dataFormat = 0;
-    std::cout << "Save data to file..." << std::endl;
+    std::cout << std::endl << "Save data to file..." << std::endl;
     //std::cout << "Save data to file, choose format (0 - text format, 1 - binary format, 2 - don't save data to file):" << std::endl;
     //std::cin >> dataFormat;
 
@@ -203,8 +200,8 @@ int main()
     else
         std::cout << "Data not Saved" << std::endl;
 
-    std::cout << "################################" << std::endl;
-    std::cout << "################################" << std::endl;
+    std::cout << "-----------------------------------" << std::endl;
+
 
     delete[] areaValues;
     delete [] figures;
