@@ -8,9 +8,10 @@
 class Circle:
 public Figure
 {
+protected:
     double r;
 
-    public:
+public:
     Circle(int r=0);
     
     double area(void)const;

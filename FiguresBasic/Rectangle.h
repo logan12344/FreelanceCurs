@@ -7,6 +7,7 @@
 class Rectangle:
 public Figure
 {
+protected:
 	int a,b;
 
 public:

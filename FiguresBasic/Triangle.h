@@ -7,6 +7,7 @@
 class Triangle:
 public Figure
 {
+protected:
 	int a,b,c;
 
 public:

@@ -7,6 +7,7 @@
 class Ellipse :
     public Figure
 {
+protected:
     double r, R;
     
 public:
