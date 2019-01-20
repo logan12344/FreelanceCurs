@@ -190,25 +190,18 @@ int main()
 			sumX += figures[i]->getCenter().x();
 			sumY += figures[i]->getCenter().y();
 
-			cout << *figures[i] << endl;
-			cout << "\n_______________________________________________________________";
-			cout << "\n|   Area |All figures mean area|All figures center mean (x, y)|";
-			cout << "\n|________|_____________________|______________________________|";
-			cout << "\n|" << setw(8) << areaValues[i] << "|" << setw(21) << getArithmeticMean<int>(areaValues, count) << "|" << setw(27) << sumX / count << ", " << sumY / count << "|";
-			cout << "\n|________|_____________________|______________________________|";
-		}
+        cout << *figures[i] << endl;
+		cout << "\n_______________________________________________________________";
+		cout << "\n|   Area |All figures mean area|All figures center mean (x, y)|";
+		cout << "\n|________|_____________________|______________________________|";
+		cout << "\n|" << setw(8) <<  areaValues[i] << "|" << setw(21) << getArithmeticMean<int>(areaValues, count) << "|" << setw(27) << sumX / count << ", " << sumY / count << "|";
+		cout << "\n|________|_____________________|______________________________|";
+    }
 
-		std::cout << "################################" << std::endl;
-		std::cout << "All figures mean area = " << getArithmeticMean<int>(areaValues, count) << std::endl;
-		std::cout << "################################" << std::endl;
-		std::cout << "All figures center mean (x, y) = (" << sumX / count << ", " << sumY / count << ")" << std::endl;
-		std::cout << "################################" << std::endl;
-		std::cout << std::endl;
-
-		int dataFormat = 0;
-		std::cout << std::endl << "Save data to file..." << std::endl;
-		//std::cout << "Save data to file, choose format (0 - text format, 1 - binary format, 2 - don't save data to file):" << std::endl;
-		//std::cin >> dataFormat;
+    int dataFormat = 0;
+    std::cout << std::endl << "Save data to file..." << std::endl;
+    //std::cout << "Save data to file, choose format (0 - text format, 1 - binary format, 2 - don't save data to file):" << std::endl;
+    //std::cin >> dataFormat;
 
 		if (dataFormat <= 1)
 		{
