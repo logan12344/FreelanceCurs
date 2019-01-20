@@ -12,7 +12,6 @@ public Figure
 
     public:
     Circle(int r=0);
-    Circle(vector<string> pars);
     
     double area(void)const;
     std::string print() const;

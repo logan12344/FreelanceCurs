@@ -14,11 +14,6 @@ Ellipse::Ellipse(double _r, double _R)
     }
 }
 
-Ellipse::Ellipse(vector<string> pars) :
-    Ellipse(pars.size() == 2 ? std::stod(pars[0]) : 0, pars.size() == 2 ? std::stod(pars[1]) : 0)    
-{
-}
-
 double Ellipse::area(void) const
 {
     return M_PI*r*R;

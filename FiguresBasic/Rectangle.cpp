@@ -16,11 +16,6 @@ Rectangle::Rectangle(double inX, double inY ):a(inX),b(inY)
     }
 }
 
-Rectangle::Rectangle(vector<string> pars) :
-    Rectangle(pars.size() == 2 ? std::stod(pars[0]) : 0, pars.size() == 2 ? std::stod(pars[1]) : 0)
-{
-}
-
 double Rectangle::area(void) const
 {
     return a*b;

@@ -12,13 +12,6 @@ Circle::Circle(int in) :r(in)
     }
 }
 
-Circle::Circle(vector<string> pars) :
-    Circle(pars.size()==1 ? std::stod(pars[0]) : 0)
-{
-//    if (pars.size() != 1)
-//        throw std::logic_error("Exception: error in reading file textDataFile.txt - try to delete this file and restart");    
-}
-
 double Circle::area(void) const
 {
     return M_PI * r*r;

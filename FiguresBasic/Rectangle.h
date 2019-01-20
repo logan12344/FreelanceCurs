@@ -11,7 +11,6 @@ public Figure
 
 public:
     Rectangle(double s1=0,double s2=0);
-    Rectangle(vector<string> pars);
     virtual double area(void)const;
     virtual std::string print() const;
     virtual std::string printToFile() const;

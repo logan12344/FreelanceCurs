@@ -11,7 +11,6 @@ class Ellipse :
     
 public:
     Ellipse(double _r=0, double _R=0);
-    Ellipse(vector<string> pars);
 
     double area(void)const;
     std::string print() const;

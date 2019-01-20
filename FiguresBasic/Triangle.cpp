@@ -22,12 +22,6 @@ Triangle::Triangle(double inX, double inY, double inZ) :a(inX), b(inY), c(inZ)
     }    
 }
 
-Triangle::Triangle(vector<string> pars) :
-    Triangle(pars.size() == 3 ? std::stod(pars[0]) : 0, pars.size() == 3 ? std::stod(pars[1]) : 0,
-        pars.size() == 3 ? std::stod(pars[2]) : 0)    
-{
-}
-
 double Triangle::area() const
 {
     double p = 0.5*(a + b + c);

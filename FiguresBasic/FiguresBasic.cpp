@@ -35,16 +35,16 @@ Figure *createFigure(EFiguresTypes type, vector<string> params=vector<string>())
     switch (type)
     {
     case eFTCircle:
-        f = new Circle(params);
+        f = new Circle();
         break;
     case eFTTriangle:
-        f = new Triangle(params);
+        f = new Triangle();
         break;
     case eFTRectangle:
-        f = new Rectangle(params);
+        f = new Rectangle();
         break;
     case eFTEllipse:
-        f = new Ellipse(params);
+        f = new Ellipse();
         break;
     }
 
