@@ -7,10 +7,10 @@
 class Rectangle:
 public Figure
 {
-    double a,b;
+	int a,b;
 
 public:
-    Rectangle(double s1=0,double s2=0);
+    Rectangle(int s1=0, int s2=0);
     virtual double area(void)const;
     virtual std::string print() const;
     virtual std::string printToFile() const;

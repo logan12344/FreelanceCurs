@@ -11,7 +11,7 @@ std::ostream& operator<<(std::ostream& out, Figure& f)
 std::istream& operator>>(std::istream& in, Figure& f)
 {    
     f.read(in);
-    std::cout << "Input sides of "<<f.print() << std::endl;
+    std::cout << "Input center of "<<f.print() << std::endl;
     in >> f.center;
     return in;
 }

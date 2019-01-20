@@ -3,7 +3,7 @@
 #include <iostream>
 #include <math.h>
 
-Triangle::Triangle(double inX, double inY, double inZ) :a(inX), b(inY), c(inZ)
+Triangle::Triangle(int inX, int inY, int inZ) :a(inX), b(inY), c(inZ)
 {
     if (a < 0)
     {        
@@ -24,7 +24,7 @@ Triangle::Triangle(double inX, double inY, double inZ) :a(inX), b(inY), c(inZ)
 
 double Triangle::area() const
 {
-    double p = 0.5*(a + b + c);
+	double p = 0.5*(a + b + c);
     return sqrt(p*(p - a)*(p - b)*(p - c));
 }
 

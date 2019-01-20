@@ -19,6 +19,21 @@ enum EFiguresTypes {
     eFTLast
 };
 
+std::ostream& operator<<(std::ostream& out, Figure& f)
+{
+	out << f.print() << " with center: ";
+	f.center.print(out);
+	return out;
+}
+
+std::istream& operator>>(std::istream& in, Figure& f)
+{
+	f.read(in);
+	std::cout << "Input center of " << f.print() << std::endl;
+	in >> f.center;
+	return in;
+}
+
 template <class T>
 T getArithmeticMean(T *areaValues, int count)
 {
@@ -73,7 +88,7 @@ int main()
 {
     int count=0;
     int openFormat = 0;
-    double *areaValues = nullptr;
+    int *areaValues = nullptr;
     Figure** figures = nullptr;
 
     std::cout << "Load data from previous session (1 - yes, 2 - no):";
@@ -119,7 +134,7 @@ int main()
             count = cnt;
             if (cnt > 0)
             {
-                areaValues = new double[cnt];
+                areaValues = new int[cnt];
                 figures = new Figure*[cnt];
 
                 for (int i = 0; i < cnt; i++)
@@ -135,7 +150,7 @@ int main()
         std::cin >> count;
         std::cout << "################################" << std::endl;
 
-        areaValues = new double[count];
+        areaValues = new int[count];
         figures = new Figure*[count];
 
         try {
@@ -161,8 +176,8 @@ int main()
     std::cout << "Print all figures" << std::endl;
     std::cout << "################################" << std::endl;
 
-    double sumX = 0;
-    double sumY = 0;
+    int sumX = 0;
+    int sumY = 0;
 
     for (int i = 0; i < count; i++)
     {
@@ -177,6 +192,13 @@ int main()
 		cout << "\n|" << setw(8) <<  areaValues[i] << "|" << setw(21) << getArithmeticMean<double>(areaValues, count) << "|" << setw(27) << sumX / count << ", " << sumY / count << "|";
 		cout << "\n|________|_____________________|______________________________|";
     }
+
+    std::cout << "################################" << std::endl;
+    std::cout << "All figures mean area = " << getArithmeticMean<double>(areaValues, count) << std::endl;
+    std::cout << "################################" << std::endl;
+    std::cout << "All figures center mean (x, y) = (" << sumX / count << ", " << sumY / count << ")" << std::endl;
+    std::cout << "################################" << std::endl;
+    std::cout << std::endl;
 
     int dataFormat = 0;
     std::cout << std::endl << "Save data to file..." << std::endl;

@@ -2,8 +2,8 @@
 #include <iomanip>
 
 double Point::dist(Point other) {
-    double xd = xval - other.xval;
-    double yd = yval - other.yval;
+    int xd = xval - other.xval;
+    int yd = yval - other.yval;
     return sqrt(xd*xd + yd * yd);
 }
 
