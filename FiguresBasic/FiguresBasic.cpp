@@ -21,7 +21,7 @@ enum EFiguresTypes {
 template <class T>
 T getArithmeticMean(T *areaValues, int count)
 {
-    double sum = 0;
+    int sum = 0;
     for (int i = 0; i < count; i++)
     {
         sum += areaValues[i];
