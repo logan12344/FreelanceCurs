@@ -90,6 +90,9 @@ int main()
     int *areaValues = nullptr;
     Figure** figures = nullptr;
 
+
+	
+
     std::cout << "Load data from previous session (1 - yes, 2 - no):";
     //std::cout << "Load data from previous session? \n (type: 0 - to load data in text format, \n 1 - to load data in binary format, \n 2 - don't load previous data):" << std::endl;
     std::cin >> openFormat;
