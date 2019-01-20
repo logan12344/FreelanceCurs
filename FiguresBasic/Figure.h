@@ -19,6 +19,7 @@ public:
     virtual std::string print() const = 0;
     virtual std::string printToFile() const = 0;
     virtual std::istream& read(std::istream&) = 0;
+	virtual bool limit(int lim) = 0;
     friend std::ostream& operator<<(std::ostream&, Figure&);
     friend std::istream& operator>>(std::istream&, Figure&);
 };
