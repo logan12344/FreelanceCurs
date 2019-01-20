@@ -194,7 +194,7 @@ int main()
 		cout << "\n_______________________________________________________________";
 		cout << "\n|   Area |All figures mean area|All figures center mean (x, y)|";
 		cout << "\n|________|_____________________|______________________________|";
-		cout << "\n|" << setw(8) <<  areaValues[i] << "|" << setw(21) << getArithmeticMean<double>(areaValues, count) << "|" << setw(27) << sumX / count << ", " << sumY / count << "|";
+		cout << "\n|" << setw(8) <<  areaValues[i] << "|" << setw(21) << getArithmeticMean<int>(areaValues, count) << "|" << setw(27) << sumX / count << ", " << sumY / count << "|";
 		cout << "\n|________|_____________________|______________________________|";
     }
 
