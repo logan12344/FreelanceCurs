@@ -13,10 +13,10 @@ public:
     Ellipse(double _r=0, double _R=0);
     Ellipse(vector<string> pars);
 
-    virtual double area(void)const;
-    virtual std::string print() const;
-    virtual std::string printToFile() const;
-    virtual std::istream& read(std::istream&);
+    double area(void)const;
+    std::string print() const;
+    std::string printToFile() const;
+    std::istream& read(std::istream&);
 };
 
 #endif /* ELLIPSE_H */
