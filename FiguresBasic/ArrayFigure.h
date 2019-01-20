@@ -4,9 +4,15 @@
 class ArrayFigure : public Figure
 {
 public:
-	Figure *arr[5];
+	int *numbers;
+	Figure *arr;
 	
 	void showArr() {
 		string print();
+	}
+
+	int &operator[](int j)
+	{
+		return numbers[j];
 	}
 };

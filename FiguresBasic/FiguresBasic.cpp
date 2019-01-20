@@ -29,7 +29,7 @@ std::ostream& operator<<(std::ostream& out, Figure& f)
 std::istream& operator>>(std::istream& in, Figure& f)
 {
 	f.read(in);
-	std::cout << "Input center of " << f.print() << std::endl;
+	std::cout << "Input sides of " << f.print() << std::endl;
 	in >> f.center;
 	return in;
 }
@@ -76,7 +76,7 @@ Figure *createFigure(EFiguresTypes type, vector<string> params=vector<string>())
 }
 
 const char textDataFile[] = { "textDataFile.txt" };
-const char binaryDataFile[] = { "binaryDataFile.txt" };
+const char binaryDataFile[] = { "binaryDataFile.bin" };
 
 bool is_file_exist(const char *fileName)
 {
@@ -130,7 +130,6 @@ int main()
 					else {
 						params.push_back(str);
 					}
-					//infile >> str;
 				}
 
 				infile.close();
@@ -200,19 +199,15 @@ int main()
 
     int dataFormat = 0;
     std::cout << std::endl << "Save data to file..." << std::endl;
-    //std::cout << "Save data to file, choose format (0 - text format, 1 - binary format, 2 - don't save data to file):" << std::endl;
-    //std::cin >> dataFormat;
 
 		if (dataFormat <= 1)
 		{
-			ios_base::openmode mode = (dataFormat == 0 ? ios_base::out : ios_base::binary);
-			std::ofstream outfile(dataFormat == 0 ? textDataFile : binaryDataFile, mode);
-			//outfile << "Count: " << count << "\n";
+			std::ofstream outfile(binaryDataFile, std::ios::binary);
+			outfile.write("Count: " , count);
 			for (int i = 0; i < count; i++)
 			{
-				//const string &str = figures[i]->print();
-				//outfile.write(str.c_str(), str.size());
-				outfile << figures[i]->printToFile() << "\n";
+				const string &str = figures[i]->print();
+				outfile.write(str.c_str(), str.size());
 			}
 			outfile.close();
 			std::cout << "Data saved" << std::endl;
