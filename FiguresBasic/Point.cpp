@@ -1,4 +1,5 @@
 #include "Point.h"
+#include <iomanip>
 
 double Point::dist(Point other) {
     int xd = xval - other.xval;
@@ -25,6 +26,11 @@ Point Point::sub(Point b)
 void Point::print(ostream &strm)
 {
     strm << "(" << xval << "," << yval << ")";
+	strm << "\n___________________";
+	strm << "\n|   X    |    Y   |";
+	strm << "\n|________|________|";
+	strm << "\n|" << setw(8) << xval << "|" << setw(8) << yval << "|";
+	strm << "\n|________|________|";
 }
 
 std::istream& operator>>(std::istream& in, Point &p)
